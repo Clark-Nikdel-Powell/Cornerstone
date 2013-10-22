@@ -1,0 +1,14 @@
+
+%pseudo-triangle {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	border: solid 10px transparent;
+}
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	::-moz-placeholder {@content}
+	:-ms-input-placeholder {@content}
+}

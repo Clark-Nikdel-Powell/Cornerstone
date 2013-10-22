@@ -1,0 +1,98 @@
+
+body, input, textarea, select {
+	@extend %font-body;
+	font-size: $fz;
+	color: $c-body;
+}
+
+del {text-decoration:line-through;}
+sup, sub {line-height:1em;}
+q, blockquote {quotes: none;}
+q:before, q:after, blockquote:before, blockquote:after {content: ""; content: none;}
+
+a, input[type=submit] {
+	@include transition('color 0.3s, background-color 0.3s, border-color 0.3s');
+
+	&:hover {@include transition('color 0s, background-color 0s, border-color 0s');}
+}
+
+a {color: $c-link; text-decoration: none;}
+a:hover {color: $c-link-hover;}
+
+label {
+	display: inline-block;
+	padding-left: 0.2em;
+	font-weight: bold;
+}
+input, textarea, select {
+	padding: $input-pad;
+	border: solid 1px rgba(#000, 0.3);
+	width: 100%;
+}
+input[type=radio], input[type=checkbox] {
+	padding: 0;
+	border: 0;
+	width: auto;
+}
+textarea {
+	line-height: 1.4em;
+	padding: $input-pad ($input-pad * 1.5);
+}
+input[type=submit], input[type=button], a.btn {
+	display: inline-block;
+	width: auto;
+	background-color: $c-link;
+	border-color: transparent;
+	color: #fff;
+	font-weight: bold;
+	padding: $input-pad ($input-pad * 2);
+	line-height: 1em;
+
+	&:hover {background-color: $c-link-hover;}
+	&:active {background-color: darken($c-link-hover, 5%);}
+}
+
+.ctst {
+	h1, h2, h3, h4, h5, h6 {
+		padding-top: 1.2em;
+		line-height: 1.1em;
+		cursor: default;
+		@extend %font-header;
+	}
+	h1 {font-size:2.4em;}
+	h2 {font-size:1.8em; margin-bottom:-1px;}
+	h3 {font-size:1.4em; margin-bottom:-2px;}
+	h4 {font-size:1.2em; margin-bottom:-3px;}
+	h5, h6 {font-size:1em; margin-bottom:-4px;}
+
+	p, ul, ol, table {
+		line-height: 1.7em;
+		margin-top: 1.2em;
+	}
+	ul, ol {margin-left: 1.7em;}
+	ul {list-style: disc;}
+	ol {list-style: decimal;}
+	ul ul, ul ol, ol ul, ol ol {margin-top: 0;}
+	li {padding: .2em 0;}
+	ul, ol {&.spaced {li {padding: .6em 0;}}}
+
+	th, td {
+		padding: 1em .5em;
+		border-bottom: solid 1px rgba(#000, .15);
+		line-height: 1.4em;
+	}
+	table.noborder {th, td {border: 0;}}
+	table.layoutonly {
+		width: 100%;
+
+		th, td {padding:0; border:0; vertical-align:top;}
+	}
+
+	form {
+		padding-top: 0.6em;
+
+		p, ul, ol, table {margin-top: 0.7em;}
+	}
+}
+%nobullets {list-style:none; margin-left:0;}
+%nostyle-list {margin:0; list-style:none; li {padding:0;}}
