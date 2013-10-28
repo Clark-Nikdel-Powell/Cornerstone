@@ -1,21 +1,21 @@
 
-//  COMPASS  ////////////////////////////////////////////////////////////////
-
-@import 'compass/css3/', 'compass/support', 'compass/utilities/general/hacks';
-
-$legacy-support-for-ie: true;
-$legacy-support-for-ie6: false;
-
 //  LAYOUT  ////////////////////////////////////////////////////////////////
 
-$max-width: 1150px;
+// Set these to false for full-width site
+$max_width: 1200px;
+$gl_pad: 30px;
+
+//  GRID  ////////////////////////////////////////////////////////////////
+
+$grid_column_count: 12; // Only change this in cases of EXTREME EMERGENCY!
+$grid_spacing: 1.2em;
 
 //  BREAK POINTS  ////////////////////////////////////////////////////////////////
 
-$mq_desktop_lg: 'min-width:1200px';
-$mq_tablet_sm: 'max-width:1000px';
-$mq_mobile_lg: 'max-width:700px';
-$mq_mobile_sm: 'max-width:450px';
+$mq_dk_lg: 'min-width: 1200px';
+$mq_tb_sm: 'max-width: 1000px';
+$mq_mb_lg: 'max-width: 700px';
+$mq_mb_sm: 'max-width: 450px';
 
 //  TYPOGRAPHY  ////////////////////////////////////////////////////////////////
 
@@ -26,20 +26,20 @@ $mq_mobile_sm: 'max-width:450px';
 %font-body {font-family: 'Droid Sans', sans-serif;}
 
 $fz: 16px;
-$input-pad: .5em;
+$input_pad: .5em;
 
 //  COLORS  ////////////////////////////////////////////////////////////////
 
 $blue: blue;
 $red: red;
 
-$c-body: #555;
-$c-link: $blue;
-$c-link-hover: $red;
+$c_body: #555;
+$c_link: $blue;
+$c_link_hover: $red;
 
-$c-tw: #2AB6E9;
-$c-fb: #3B5998;
-$c-li: #0A7AB3;
-$c-yt: #BD2F29;
-$c-ig: #517FA3;
-$c-rss: #F79937;
+$c_tw: #2AB6E9;
+$c_fb: #3B5998;
+$c_li: #0A7AB3;
+$c_yt: #BD2F29;
+$c_ig: #517FA3;
+$c_rss: #F79937;

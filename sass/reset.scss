@@ -105,16 +105,16 @@ textarea {
 
 .show-on-tablet-sm, .show-on-mobile, .show-on-mobile-lg, .show-on-mobilesm {display:none;}
 
-@media ($mq_tablet_sm) {
+@media ($mq_tb_sm) {
 	.show-on-desktop, .hide-on-tablet, .hide-on-tablet-sm {display:none !important;}
 	.show-on-tablet, .show-on-tablet-sm {display:inherit;}
 	a {word-wrap:break-word;}
 }
-@media ($mq_mobile_lg) {
+@media ($mq_mb_lg) {
 	.show-on-tablet, .show-on-tablet-sm, .hide-on-mobile, .hide-on-mobile-lg {display:none !important;}
 	.show-on-mobile, .show-on-mobile-lg {display:inherit;}
 }
-@media ($mq_mobile_sm) {
+@media ($mq_mb_sm) {
 	.show-on-mobile-lg {display:none !important;}
 	.show-on-mobile-sm {display:inherit;}
 }

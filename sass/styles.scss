@@ -1,6 +1,9 @@
 
 // Everyone needs these.
-@import 'settings', 'mixins', 'reset', 'typography';
+@import 'compass', 'settings', 'mixins', 'reset', 'typography';
+
+// Prototype
+@import 'grid', 'wireframe';
 
 // Mobile devices.
 @import 'responsive';

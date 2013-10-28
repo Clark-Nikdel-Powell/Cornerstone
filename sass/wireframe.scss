@@ -1,0 +1,7 @@
+
+.box {
+	border: solid 1px #aaa;
+	padding: $grid_spacing;
+
+	> :first-child {margin-top: 0; padding-top: 0;}
+}
