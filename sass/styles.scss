@@ -1,9 +1,20 @@
+/*
+** Everyone needs these.
+*/
+@import 'compass';
+@import 'settings';
+@import 'funxins';
+@import 'media-queries';
+@import 'reset';
+@import 'typography';
+@import 'grid';
 
-// Everyone needs these.
-@import 'compass', 'settings', 'mixins', 'reset', 'typography';
+/*
+** Prototype. Not for real site.
+*/
+@import 'wireframe';
 
-// Prototype
-@import 'grid', 'wireframe';
-
-// Mobile devices.
+/*
+** Mobile devices.
+*/
 @import 'responsive';

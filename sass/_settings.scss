@@ -1,0 +1,56 @@
+/*
+** Change any value,
+** But not variable names,
+** OR 123DEATH!
+*/
+
+/*
+** Layout
+*/
+$max_width: 1200px;
+
+/*
+** Break points, in pixels
+**
+** Need to turn this into an array
+** then make everything else depend on that array
+** so you could have 2 break points or 10
+** and break point names define class names
+*/
+$break_points: (
+	'dklg' 1200px
+,	'tbsm' 950px
+,	'mblg' 700px
+,	'mbsm' 450px
+);
+$bp_default: 'dk';
+$bp_stack_columns: 'mblg';
+
+/*
+** Typography
+*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+%font-header {font-family: 'Droid Serif', serif;}
+%font-body {font-family: 'Droid Sans', sans-serif;}
+
+$fz: 16px;
+$input_pad: .5em;
+
+/*
+** Colors
+*/
+$blue: blue;
+$red: red;
+
+$c_body: #555;
+$c_link: $blue;
+$c_link_hover: $red;
+
+$c_tw: #2AB6E9;
+$c_fb: #3B5998;
+$c_li: #0A7AB3;
+$c_yt: #BD2F29;
+$c_ig: #517FA3;
+$c_rss: #F79937;

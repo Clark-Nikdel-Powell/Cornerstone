@@ -1,0 +1,79 @@
+/*
+** Build media queries.
+*/
+// Start with a blank list
+$media_queries: ();
+
+// Loop through break points defined in _settings.scss
+@each $bp in $break_points {
+
+	// Initialize variables
+	$max: '';
+	$and: '';
+	$min: '';
+	$index: index($break_points, $bp);
+
+	// First in the list is the largest
+	// for infinity and beyond!
+	@if $index == 1 {
+		$min: 'min-width: #{ nth($bp, 2) }';
+	}
+
+	// But all the others..
+	@else {
+
+		// Start with a max-width
+		$max: 'max-width: #{ nth($bp, 2) }';
+
+		// Checks that we're not at the end of the list yet
+		// The last breakpoint doesn't have a min-width
+		@if $index != length($break_points) {
+			$and: ') and (';
+			$min: 'min-width: #{ nth(nth($break_points, $index + 1), 2) - 1 }';
+		}
+	}
+
+	// Build media query
+	// $and was broken out for reasons that may not be necessary any more
+	// but might come in handy in the future
+	$mq: $max + $and + $min;
+
+	// Add this media query to the list
+	$media_queries: append($media_queries, nth($bp, 1) $mq);
+}
+
+// Legacy. Delete them when everything works off the $media_queries array.
+$bp_dk_lg: 1200px;
+$mq_tb_sm: 1000px;
+$mq_mb_lg: 700px;
+$mq_mb_sm: 450px;
+$mq_dk_lg: 'min-width: #{$bp_dk_lg}';
+$mq_tb_sm: 'max-width: #{$mq_tb_sm}) and (min-width: #{$mq_mb_lg - 1}';
+$mq_mb_lg: 'max-width: #{$mq_mb_lg}) and (min-width: #{$mq_mb_sm - 1}';
+$mq_mb_sm: 'max-width: #{$mq_mb_sm}';
+
+/*
+** Show/hide classes
+**
+** Hopefully all these !importants won't do too much damage..
+** This won't work properly on elements that are being set to an unnatural display,
+** like CSS tables.
+*/
+%d-n {display: none !important;}
+
+@each $mq in $media_queries {
+
+	.show-on-#{ nth($mq, 1) }, .hide-on-#{ $bp_default } {
+		@extend %d-n;
+	}
+
+	@media (nth($mq, 2)) {
+		.hide-on-#{ nth($mq, 1) }, .show-on-#{ $bp_default } {
+			display: none !important;
+		}
+		.show-on-#{ nth($mq, 1) }, .hide-on-#{ $bp_default } {
+			display: inherit !important;
+		}
+	}
+
+}

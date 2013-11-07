@@ -1,0 +1,40 @@
+
+/*
+** Browser previx support for styling input placeholders
+** If this makes its way into Compass, we can ditch it here
+*/
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	::-moz-placeholder {@content}
+	:-ms-input-placeholder {@content}
+}
+
+/*
+** Kiiiinda emulates associative arrays
+** Got it from here: http://hugogiraudel.com/2013/08/12/sass-functions/
+** Pretty sure it's voodoo, so don't touch it
+*/
+@function match($haystack, $needle) {
+  @each $item in $haystack {
+    $index: index($item, $needle);
+    @if $index {
+      $return: if($index == 1, 2, $index);
+      @return nth($item, $return);
+    }
+  }
+  @return false;
+}
+
+/*
+** This only works with lists nested one level deep.
+** It could probably be more future proof.
+** I wish Chris was still around.. :[
+*/
+@function index_from_key($haystack, $needle) {
+	@each $item in $haystack {
+		@if nth($item, 1) == $needle {
+			@return index($haystack, $item);
+		}
+	}
+	@return false;
+}
