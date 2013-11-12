@@ -10,12 +10,10 @@
 $max_width: 1200px;
 
 /*
-** Break points, in pixels
+** List of break points, in pixels
 **
-** Need to turn this into an array
-** then make everything else depend on that array
-** so you could have 2 break points or 10
-** and break point names define class names
+** List in descending order
+** Largest (thus, first) will be just min-width
 */
 $break_points: (
 	'dklg' 1200px
@@ -23,7 +21,12 @@ $break_points: (
 ,	'mblg' 700px
 ,	'mbsm' 450px
 );
+
+// Name of default breakpoint
+// Styles between first and second widths defined in $break_points
 $bp_default: 'dk';
+
+// Name of breakpoint in $break_points to start stacking columns
 $bp_stack_columns: 'mblg';
 
 /*
