@@ -13,13 +13,13 @@ $grid_column_count: 12;
 	@extend %clearfix;
 	margin-left: auto;
 	margin-right: auto;
-	padding: $row_pad_v $row_pad_h;
+	@if $row_pad { padding: $row_pad; }
 }
 .column {
 	display: block;
 	float: left;
 	position: relative;
-	padding: $col_pad_v $col_pad_h;
+	@if $col_pad { padding: $col_pad; }
 
 	&:first-child {padding-left: 0;}
 	&:last-child {padding-right: 0; float: right;}
