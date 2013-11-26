@@ -1,10 +1,12 @@
 
 body, input, textarea, select {
-	@extend %font_body;
+	@extend %f_body;
 	font-size: $fz;
 	color: $c_body;
 }
 
+h1, h2, h3, h4, h5, h6 {cursor: default;}
+a {h1, h2, h3, h4, h5, h6 {cursor: inherit;}}
 del {text-decoration:line-through;}
 sup, sub {line-height:1em;}
 q, blockquote {quotes: none;}
@@ -57,7 +59,7 @@ input[type=submit], input[type=button], a.btn {
 		padding-top: 1.2em;
 		line-height: 1.1em;
 		cursor: default;
-		@extend %font_header;
+		@extend %f_header;
 	}
 	h1 {font-size:2.4em;}
 	h2 {font-size:1.8em; margin-bottom:-1px;}
