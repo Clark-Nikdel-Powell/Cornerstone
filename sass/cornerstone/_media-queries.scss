@@ -25,12 +25,18 @@ $media_queries: ();
 		// Start with a max-width
 		$max: 'max-width: #{ nth($bp, 2) }';
 
+		/*
+		** Got rid of this because
+		** I needed mblg styles to cascade down to mbsm.
+		** There might be a way around it.
+		** Or maybe this is just unnecessary.
+		*/
 		// Checks that we're not at the end of the list yet
 		// The last breakpoint doesn't have a min-width
-		@if $index != length($break_points) {
-			$and: ') and (';
-			$min: 'min-width: #{ nth(nth($break_points, $index + 1), 2) - 1 }';
-		}
+		//@if $index != length($break_points) {
+		//  $and: ') and (';
+		//  $min: 'min-width: #{ nth(nth($break_points, $index + 1), 2) - 1 }';
+		//}
 	}
 
 	// Build media query
@@ -41,16 +47,6 @@ $media_queries: ();
 	// Add this media query to the list
 	$media_queries: append($media_queries, nth($bp, 1) $mq);
 }
-
-// Legacy. Delete them when everything works off the $media_queries array.
-$bp_dk_lg: 1200px;
-$mq_tb_sm: 1000px;
-$mq_mb_lg: 700px;
-$mq_mb_sm: 450px;
-$mq_dk_lg: 'min-width: #{$bp_dk_lg}';
-$mq_tb_sm: 'max-width: #{$mq_tb_sm}) and (min-width: #{$mq_mb_lg - 1}';
-$mq_mb_lg: 'max-width: #{$mq_mb_lg}) and (min-width: #{$mq_mb_sm - 1}';
-$mq_mb_sm: 'max-width: #{$mq_mb_sm}';
 
 /*
 ** Show/hide classes
