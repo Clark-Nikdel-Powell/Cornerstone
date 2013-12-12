@@ -1,13 +1,13 @@
 /*
 ** Everyone needs these.
 */
-@import 'compass';
+@import 'cornerstone/vendor';
 @import 'settings';
-@import 'funxins';
-@import 'media-queries';
-@import 'reset';
-@import 'typography';
-@import 'grid';
+@import 'cornerstone/funxins';
+@import 'cornerstone/media-queries';
+@import 'cornerstone/reset';
+@import 'cornerstone/typography';
+@import 'cornerstone/grid';
 
 /*
 ** Prototype. Not for real site.
