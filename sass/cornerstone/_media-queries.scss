@@ -70,6 +70,9 @@ $media_queries: ();
 		.show-on-#{ nth($mq, 1) }, .hide-on-#{ $bp_default } {
 			display: inherit !important;
 		}
+		table.show-on-#{ nth($mq, 1) }, table.hide-on-#{ $bp_default } {
+			display: table !important;
+		}
 	}
 
 }
