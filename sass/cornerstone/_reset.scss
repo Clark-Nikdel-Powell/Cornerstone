@@ -84,6 +84,11 @@ textarea {
 }
 
 /*
+** WordPress
+*/
+.screen-reader-text {display: none;}
+
+/*
 ** CSS Tables
 */
 .table {@extend %table;}

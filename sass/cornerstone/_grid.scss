@@ -43,6 +43,9 @@ $grid_column_count: 12;
 ** "Just put it in a table"
 */
 .row.table {
+  display: table;
+  table-layout: fixed;
+
 	&.va-t .column {vertical-align: top;}
 	&.va-b .column {vertical-align: bottom;}
 	> .column {

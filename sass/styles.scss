@@ -1,20 +1,14 @@
 /*
-** Everyone needs these.
+** Cornerstone
 */
-@import 'cornerstone/vendor';
-@import 'settings';
-@import 'cornerstone/funxins';
-@import 'cornerstone/media-queries';
-@import 'cornerstone/reset';
-@import 'cornerstone/typography';
-@import 'cornerstone/grid';
+@import 'cornerstone/cornerstone';
 
 /*
 ** Prototype. Not for real site.
 */
-@import 'wireframe';
+@import 'cornerstone/wireframe';
 
 /*
-** Mobile devices.
+** This site
 */
-@import 'responsive';
+//@import 'your files here';
