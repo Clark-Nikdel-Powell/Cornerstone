@@ -2,6 +2,10 @@
 ** Change any value,
 ** But not variable names,
 ** OR 123DEATH!
+**
+** And don't even start discussing 
+** color variable names
+** OR 123DEATH!
 */
 
 /*
@@ -34,13 +38,13 @@ $bp_stack_columns: 'mblg';
 /*
 ** Typography
 */
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(//fonts.googleapis.com/css?family=Droid+Serif);
 %f_header {font-family: 'Droid Serif', serif;}
 $fw_b_header: 700;
 $fw_n_header: 400;
 $fw_l_header: 300;
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(//fonts.googleapis.com/css?family=Droid+Sans);
 %f_body {font-family: 'Droid Sans', sans-serif;}
 $fw_b: 700;
 $fw_n: 400;
