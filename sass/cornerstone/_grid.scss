@@ -13,6 +13,8 @@ $grid_column_count: 12;
 	margin-left: auto;
 	margin-right: auto;
 	@if $row_pad { padding: $row_pad; }
+
+	.row {max-width: none;}
 }
 .column {
 	display: block;
@@ -67,7 +69,10 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 	// For the stacked media query and smaller
 	@if index($media_queries, $mq) >= $stack_columns_index {
 		@for $x from 1 through $grid_column_count {
-		  .#{$bp_default}-#{$x} {width: 100%;}
+		  .#{$bp_default}-#{$x} {
+		  	width: 100%;
+		  	&, &:last-child {float: none;}
+		  }
 			.push-#{$x} {left: auto;}
 			.pull-#{$x} {right: auto;}
 		}
@@ -77,7 +82,11 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 	}
 	// Set grid for each media query
 	@for $x from 1 through $grid_column_count {
-		.#{ nth($mq, 1) }-#{ $x } {width: $x / $grid_column_count * 99.999%;}
+		.#{ nth($mq, 1) }-#{ $x } {
+			width: $x / $grid_column_count * 99.999%;
+			float: left;
+			&:last-child {float: right;}
+		}
 	}
 
 }
