@@ -19,7 +19,7 @@ sup, sub {line-height:1em;}
 q, blockquote {quotes: none;}
 q:before, q:after, blockquote:before, blockquote:after {content: ""; content: none;}
 
-a, input[type=submit] {
+a, input[type=submit], input[type=button], button[type=submit] {
 	@include transition('color 0.3s, background-color 0.3s, border-color 0.3s');
 
 	&:hover {@include transition('color 0s, background-color 0s, border-color 0s');}
@@ -47,16 +47,27 @@ textarea {
 	line-height: 1.4em;
 	padding: $input_pad ($input_pad * 1.5);
 }
-input[type=submit], input[type=button], a.btn {
+input[type=submit], input[type=button], button[type=submit], .btn {
 	display: inline-block;
 	width: auto;
-	background-color: $c_link;
 	border-color: transparent;
 	color: #fff;
 	font-weight: bold;
 	padding: $input_pad ($input_pad * 2);
 	line-height: 1em;
 
+	&:hover {background-color: $c_link_hover;}
+	&:active {background-color: darken($c_link_hover, 5%);}
+}
+input[type=submit], input[type=button], button[type=submit], .btn.primary {
+	background-color: $c_link;
+	color: #fff;
+}
+.btn {
+	background: rgba($c_link, .25);
+	color: $c_link;
+}
+input[type=submit], input[type=button], button[type=submit], a.btn.primary {
 	&:hover {background-color: $c_link_hover;}
 	&:active {background-color: darken($c_link_hover, 5%);}
 }
