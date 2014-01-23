@@ -88,6 +88,8 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 			&:last-child {float: right;}
 		}
 	}
+	// Full width shouldn't be pushed or pulled
+	.#{ nth($mq, 1) }-#{ $grid_column_count } {left: auto; right: auto;}
 
 }
 }
