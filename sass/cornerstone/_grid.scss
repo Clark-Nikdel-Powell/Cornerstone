@@ -30,6 +30,10 @@ $grid_column_count: 12;
 	.#{$bp_default}-#{$x}, .all-#{$x} {
 		width: $x / $grid_column_count * 99.999%;
 	}
+	// Multiple rows of .columns in one .row
+	.multi-row .#{$bp_default}-#{$x}:nth-child(#{ $grid_column_count / $x }n+1) {
+		clear: both;
+	}
 
 	// Push and pull
 	.push-#{$x} {
@@ -87,6 +91,8 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 			float: left;
 			&:last-child {float: right;}
 		}
+		// Multiple rows of .columns in one .row
+		.multi-row .#{ nth($mq, 1) }-#{ $x }:nth-child(#{ $grid_column_count / $x }n+1) {clear: both;}
 	}
 	// Full width shouldn't be pushed or pulled
 	.#{ nth($mq, 1) }-#{ $grid_column_count } {left: auto; right: auto;}
