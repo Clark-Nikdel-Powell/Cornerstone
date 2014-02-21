@@ -9,11 +9,11 @@ $grid_column_count: 12;
 .row {
 	display: block;
 	@if $max_width { max-width: $max_width; }
-	@extend %clearfix;
 	margin-left: auto;
 	margin-right: auto;
 	@if $row_pad { padding: $row_pad; }
 
+	&:not(.table) {@extend %clearfix;}
 	.row {max-width: none;}
 }
 .column {
