@@ -77,21 +77,19 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 	// For the stacked media query and smaller
 	@if index($media_queries, $mq) >= $stack_columns_index {
 
-		// Set grid
-		@for $x from 1 through $grid_column_count {
-		  .#{$bp_default}-#{$x} {
-		  	width: 100%;
+		// Unset grid
+	  .column {
+	  	width: 100%;
 
-		  	&, &:last-child:not([class*='pull'], :first-child) {float: none;}
-		  }
-		}
+	  	&, &:last-child:not([class*='pull'], :first-child) {float: none;}
+	  }
 
 		// Push and pull
 		[class*='push'], [class*='pull'] {left: auto; right: auto;}
 
 		// CSS Tables
 		.row.table.stacked {
-			&, > .column {display: block; float: left;}
+			&, > .column {display: block;}
 		}
 	}
 
