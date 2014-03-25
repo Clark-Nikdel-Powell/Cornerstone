@@ -15,6 +15,7 @@ $grid_column_count: 12;
 
 	&:not(.table) {@extend %clearfix;}
 	.row {max-width: none;}
+	&.nopad {padding: 0;}
 }
 .column {
 	display: block;
@@ -22,13 +23,14 @@ $grid_column_count: 12;
 	position: relative;
 	@if $col_pad { padding: $col_pad; }
 
-	&:last-child {float: right;}
+	&:last-child:not([class*='pull']) {float: right;}
+	&.nopad {padding: 0;}
 }
 @for $x from 1 through $grid_column_count {
 
 	// Set grid
 	.#{$bp_default}-#{$x}, .all-#{$x} {
-		width: $x / $grid_column_count * 99.999%;
+		width: round($x / $grid_column_count * 100%);
 	}
 	// Multiple rows of .columns in one .row
 	.multi-row .#{$bp_default}-#{$x}:nth-child(#{ $grid_column_count / $x }n+1) {
@@ -36,11 +38,13 @@ $grid_column_count: 12;
 	}
 
 	// Push and pull
-	.push-#{$x} {
-		left: $x / $grid_column_count * 99.999%; right: auto;
+	.#{$bp_default}-push-#{$x} {
+		left: round($x / $grid_column_count * 100%);
+		right: auto;
 	}
-	.pull-#{$x} {
-		right: $x / $grid_column_count * 99.999%; left: auto;
+	.#{$bp_default}-pull-#{$x} {
+		left: auto;
+		right: round($x / $grid_column_count * 100%);
 	}
 
 }
@@ -72,28 +76,51 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 
 	// For the stacked media query and smaller
 	@if index($media_queries, $mq) >= $stack_columns_index {
+
+		// Set grid
 		@for $x from 1 through $grid_column_count {
 		  .#{$bp_default}-#{$x} {
 		  	width: 100%;
-		  	&, &:last-child {float: none;}
+
+		  	&, &:last-child:not([class*='pull']) {float: none;}
 		  }
-			.push-#{$x} {left: auto;}
-			.pull-#{$x} {right: auto;}
 		}
+
+		// Push and pull
+		[class*='push'], [class*='pull'] {left: auto; right: auto;}
+
+		// CSS Tables
 		.row.table.stacked {
 			&, > .column {display: block; float: left;}
 		}
 	}
-	// Set grid for each media query
+
+	// For each media query
 	@for $x from 1 through $grid_column_count {
+		// Set grid
 		.#{ nth($mq, 1) }-#{ $x } {
-			width: $x / $grid_column_count * 99.999%;
+			width: round($x / $grid_column_count * 100%);
 			float: left;
-			&:last-child {float: right;}
+
+			&:last-child:not([class*='pull']) {float: right;}
 		}
+
 		// Multiple rows of .columns in one .row
-		.multi-row .#{ nth($mq, 1) }-#{ $x }:nth-child(#{ $grid_column_count / $x }n+1) {clear: both;}
+		.multi-row .#{ nth($mq, 1) }-#{ $x }:nth-child(#{ $grid_column_count / $x }n+1) {
+			clear: both;
+		}
+
+		// Push and pull
+		.#{ nth($mq, 1) }-push-#{$x} {
+			left: round($x / $grid_column_count * 100%);
+			right: auto;
+		}
+		.#{ nth($mq, 1) }-pull-#{$x} {
+			left: auto;
+			right: round($x / $grid_column_count * 100%);
+		}
 	}
+
 	// Full width shouldn't be pushed or pulled
 	.#{ nth($mq, 1) }-#{ $grid_column_count } {left: auto; right: auto;}
 
