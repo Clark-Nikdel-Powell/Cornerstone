@@ -40,7 +40,9 @@ input, textarea, select {
 	border: solid 1px rgba(#000, 0.3);
 	width: 100%;
 }
-input, select {height: 2.5em;}
+input, select {
+	height: $input_pad * 2 + 1.2;
+}
 input[type=radio], input[type=checkbox] {
 	padding: 0;
 	border: 0;
@@ -54,6 +56,7 @@ textarea {
 input[type=submit], input[type=button], a.btn {
 	display: inline-block;
 	width: auto;
+	height: auto;
 	background-color: $c_link;
 	border-color: transparent;
 	color: #fff;
