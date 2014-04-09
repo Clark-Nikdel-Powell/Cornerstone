@@ -7,11 +7,9 @@ body, input, textarea, select, button {
 	@media (match($media_queries, 'dklg')) {
 		font-size: $fz;
 	}
-	/*
 	@media (match($media_queries, 'tbsm')) {
-		font-size: $fz * .75;
+		font-size: $fz * .875;
 	}
-	*/
 }
 
 h1, h2, h3, h4, h5, h6 {cursor: default;}
