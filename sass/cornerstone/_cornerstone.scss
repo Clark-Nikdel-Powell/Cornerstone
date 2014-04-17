@@ -1,6 +1,8 @@
 
 /*
-** Import everything here so the main site doesn't have to
+** Import everything.
+** @import cornerstone/cornerstone
+** in your site's stylesheet.
 */
 @import 'vendor';
 @import 'settings';
