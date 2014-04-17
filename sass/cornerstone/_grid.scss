@@ -88,7 +88,7 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 		[class*='push'], [class*='pull'] {left: auto; right: auto;}
 
 		// CSS Tables
-		.row.table.stacked {
+		.row.table:not(.nostack) {
 			&, > .column {display: block;}
 		}
 	}
