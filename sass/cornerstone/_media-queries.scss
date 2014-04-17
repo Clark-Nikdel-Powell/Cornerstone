@@ -1,6 +1,9 @@
 /*
-** Build media queries.
+** Media queries
+** built from $break_points in _settings.
+** And display classes.
 */
+
 // Start with a blank list
 $media_queries: ();
 
