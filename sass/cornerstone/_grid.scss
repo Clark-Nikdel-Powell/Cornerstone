@@ -4,14 +4,15 @@
 ** But I am biased
 */
 
-$grid_column_count: 12;
+$row_pad: $row_pad_v $row_pad_h;
+$col_pad: $col_pad_v $col_pad_h;
 
 .row {
 	display: block;
-	@if $max_width { max-width: $max_width; }
+	@if variable-exists(max_width) { max-width: $max_width; }
 	margin-left: auto;
 	margin-right: auto;
-	@if $row_pad { padding: $row_pad; }
+	@if variable-exists(row_pad) { padding: $row_pad; }
 
 	&:not(.table) {@extend %clearfix;}
 	.row {max-width: none;}
@@ -21,7 +22,7 @@ $grid_column_count: 12;
 	display: block;
 	float: left;
 	position: relative;
-	@if $col_pad { padding: $col_pad; }
+	@if variable-exists(col_pad) { padding: $col_pad; }
 
 	&:last-child:not([class*='pull'], :first-child) {float: right;}
 	&.nopad {padding: 0;}
@@ -123,4 +124,13 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 	.#{ nth($mq, 1) }-#{ $grid_column_count } {left: auto; right: auto;}
 
 }
+}
+
+@media print {
+
+	.column {
+		width: 100%;
+		float: none;
+	}
+
 }

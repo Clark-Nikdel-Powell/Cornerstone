@@ -4,15 +4,19 @@
 ** OR 123DEATH!
 */
 
-/*
+/* ``````````````````````````````````````````````````
 ** Grid
 */
+$grid_column_count: 12;
 $max_width: 1200px;
-$row_pad: 0 1em;
-$col_pad: 1em;
+$row_pad_v: 0;
+$row_pad_h: 1em;
+$col_pad_v: 1em;
+$col_pad_h: 1em;
 
-/*
-** List of break points, in pixels
+
+/* ``````````````````````````````````````````````````
+** Media queries
 **
 ** List in descending order
 ** Largest (thus, first) will be just min-width
@@ -31,14 +35,12 @@ $bp_default: 'dk';
 // Name of breakpoint in $break_points to start stacking columns
 $bp_stack_columns: 'mblg';
 
-/*
+
+/* ``````````````````````````````````````````````````
 ** Typography
 */
-@import url(//fonts.googleapis.com/css?family=Droid+Serif);
-%f_header {font-family: 'Droid Serif', serif;}
-$fw_b_header: 700;
-$fw_n_header: 400;
-$fw_l_header: 300;
+$fz: 16px;
+$input_pad: .625em;
 
 @import url(//fonts.googleapis.com/css?family=Droid+Sans);
 %f_body {font-family: 'Droid Sans', sans-serif;}
@@ -46,10 +48,14 @@ $fw_b: 700;
 $fw_n: 400;
 $fw_l: 300;
 
-$fz: 16px;
-$input_pad: .625em;
+@import url(//fonts.googleapis.com/css?family=Droid+Serif);
+%f_header {font-family: 'Droid Serif', serif;}
+$fw_b_header: 700;
+$fw_n_header: 400;
+$fw_l_header: 300;
 
-/*
+
+/* ``````````````````````````````````````````````````
 ** Colors
 */
 $blue: blue;
