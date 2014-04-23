@@ -1,4 +1,12 @@
 /*
+** Compass
+*/
+@import 'compass/css3/', 'compass/support', 'compass/utilities/general/hacks';
+
+$legacy-support-for-ie: true;
+$legacy-support-for-ie6: false;
+
+/*
 ** Font Awesome
 */
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
@@ -16,4 +24,3 @@ $c_vm: #44BBFF;  // Vimeo
 $c_ig: #517FA3;  // Instagram
 $c_fk: #0063DB;  // Flickr
 $c_rss: #F79937; // RSS
-
