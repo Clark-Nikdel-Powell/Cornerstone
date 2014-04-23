@@ -30,7 +30,7 @@
 	outline: 0;
 	border: 0;
 	background-repeat: no-repeat;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 	vertical-align: baseline;
 }
 html {
@@ -83,19 +83,25 @@ textarea {
 }
 
 /*
-** WordPress
-*/
-.floatleft, .alignleft {float: left; margin: .125em 1.25em 1em 0;}
-.floatright, .alignright {float: right; margin: .125em 0 1em 1.25em;}
-.screen-reader-text {display: none;}
-
-/*
 ** CSS Tables
 */
 .table {@extend %table;}
 .trow {@extend %trow;}
 .tcell {@extend %tcell;}
-.fillercell {width:100%;}
+.fillercell {width: 100%;}
+
+/*
+** Classes
+*/
+.floatleft, .alignleft {float: left; margin: .125em 1.25em 1em 0;}
+.floatright, .alignright {float: right; margin: .125em 0 1em 1.25em;}
+.screen-reader-text {display: none;}
+.to-e {
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+}
 
 /*
 ** Print
