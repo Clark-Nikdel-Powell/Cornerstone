@@ -3,6 +3,8 @@
 */
 @import 'compass/css3/', 'compass/support', 'compass/utilities/general/hacks';
 
+$svg-gradient-shim-threshold: .1;
+$experimental-support-for-svg: true;
 $legacy-support-for-ie: true;
 $legacy-support-for-ie6: false;
 
