@@ -58,9 +58,10 @@ $fw_l_header: 300;
 /* ``````````````````````````````````````````````````
 ** Colors
 */
+$black: #555;
 $blue: blue;
 $red: red;
 
-$c_body: #555;
+$c_body: $black;
 $c_link: $blue;
 $c_link_hover: $red;
