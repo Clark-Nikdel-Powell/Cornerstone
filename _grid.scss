@@ -34,7 +34,8 @@ $col_pad: $col_pad_v $col_pad_h;
 		width: round($x / $grid_column_count * 100%);
 	}
 	// Multiple rows of .columns in one .row
-	.multi-row .#{$bp_default}-#{$x}:nth-child(#{ $grid_column_count / $x }n+1) {
+	$rounded_number: round( $grid_column_count / $x );
+	.multi-row .#{$bp_default}-#{$x}:nth-child(#{ $rounded_number }n+1) {
 		clear: both;
 	}
 
@@ -105,7 +106,8 @@ $stack_columns_index: index_from_key($break_points, $bp_stack_columns);
 		}
 
 		// Multiple rows of .columns in one .row
-		.multi-row .#{ nth($mq, 1) }-#{ $x }:nth-child(#{ $grid_column_count / $x }n+1) {
+		$rounded_number: round( $grid_column_count / $x );
+		.multi-row .#{ nth($mq, 1) }-#{ $x }:nth-child(#{ $rounded_number }n+1) {
 			clear: both;
 		}
 
